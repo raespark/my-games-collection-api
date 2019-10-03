@@ -2,3 +2,5 @@ logging:
   level: INFO
   loggers:
     rmetcalf: DEBUG
+template: Hello, %s!
+defaultName: World

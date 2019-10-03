@@ -4,6 +4,8 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import rmetcalf.resources.GamesResource;
+
 public class MyGamesCollectionApplication extends Application<MyGamesCollectionConfiguration> {
 
     public static void main(final String[] args) throws Exception {
@@ -17,13 +19,17 @@ public class MyGamesCollectionApplication extends Application<MyGamesCollectionC
 
     @Override
     public void initialize(final Bootstrap<MyGamesCollectionConfiguration> bootstrap) {
-        // TODO: application initialization
+        // nothing to do yet
     }
 
     @Override
     public void run(final MyGamesCollectionConfiguration configuration,
                     final Environment environment) {
-        // TODO: implement application
+        final GamesResource gamesResource = new GamesResource(
+            configuration.getTemplate(),
+            configuration.getDefaultName() 
+        );
+        environment.jersey().register(gamesResource);
     }
 
 }
