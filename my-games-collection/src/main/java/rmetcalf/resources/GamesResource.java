@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.Optional;
 
-@Path("/hello-world")
+@Path("/games")
 @Produces(MediaType.APPLICATION_JSON)
 public class GamesResource {
     private final String template;
@@ -25,6 +25,7 @@ public class GamesResource {
 
     @GET
     @Timed
+    @Path("/hello-world")
     public String sayHello(@QueryParam("name") Optional<String> name) {
         final String value = String.format(template, name.orElse(defaultName));
         return value;
