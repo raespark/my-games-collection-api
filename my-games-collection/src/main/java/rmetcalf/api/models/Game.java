@@ -1,6 +1,11 @@
 package rmetcalf.api.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import rmetcalf.api.models.Developer;
+import rmetcalf.api.models.Genre;
+import rmetcalf.api.models.Platform;
+import rmetcalf.api.models.Publisher;
+import rmetcalf.api.models.Screenshot;
 
 public class Game {
     private long id;
